@@ -11,7 +11,7 @@ export class RatsController extends BaseController {
 
   async getRats(request, response, next) {
     try {
-      const searchQuery = request.search.query
+      const searchQuery = request.query
       const rats = await ratsService.getRats(searchQuery)
       response.send(rats)
     } catch (error) {
